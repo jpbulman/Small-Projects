@@ -20,8 +20,11 @@
     [(define (skip1 lox acc)
        (cond [(empty? lox) (...acc)]
              [else
-              (... acc (first lox)
-                   (skip1 (rest lox) (...acc)))]))] (skip1 list ...)))
+              (... acc
+                   (first lox)
+                   (skip1 (rest lox)
+                          (...acc)))]))]
+    (skip1 list ...)))
 
 ;More abstract, skip the nth term
 ;Skips every nth term in a list
