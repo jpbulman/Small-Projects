@@ -5,6 +5,8 @@ class Math:
  mylist = [3,2,3]
  mylist.append(4)
 
+ print(mylist + [5, 6, 7])
+
  print(mylist[0])
 
  print(mylist[3])
@@ -17,6 +19,44 @@ class Math:
 
  print(manyhellos)
 
+ print(4 * mylist)
+
  if x == 1:
      print(x)
+
+     name = "Joe"
+
+     age = 256
+
+ print("He is %s and he is %s years old" % (name, age))
+
+length1 = len("greetings")
+
+cond1 = 1==2
+
+print(cond1)
+
+num1 = 256
+twolist = [2,4,8,16,32,64,128,256,512,1024,2048]
+
+if num1 in twolist:
+    (print("yes"))
+else:print("no")
+
+islist1 = [1,2,5]
+islist2 = [1,2,5]
+
+(print(islist1 is islist2))
+(print(1 is 1))
+
+
+
+
+
+def factorial(num1):
+    if num1 == 1:
+        return 1
+    else: return (num1 * factorial(num1-1))
+
+print(factorial(12))
 
