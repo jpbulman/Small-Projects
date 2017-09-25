@@ -60,3 +60,15 @@ def factorial(num1):
 
 print(factorial(12))
 
+def collatz(number):
+    if number==1:
+        return print("Yes, the number fits the theorem")
+    elif number%2==0:
+        collatz(number/2)
+    else:collatz((3*number)+1)
+
+collatz(123)
+
+
+
+
