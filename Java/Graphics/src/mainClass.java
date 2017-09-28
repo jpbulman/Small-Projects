@@ -19,8 +19,10 @@ public class mainClass {
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
 
-        Rectangle rect = new Rectangle(5,10,300,100);//x,y,width,height
+        //Rectangle rect = new Rectangle(5,10,300,100);//x,y,width,height
         //Add rectangle to jcomponent, then add jcomponent onto JFrame
 
+        drawingComponent DC = new drawingComponent();
+        window.add(DC);
     }
 }
