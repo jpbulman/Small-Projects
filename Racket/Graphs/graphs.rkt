@@ -27,3 +27,20 @@
                     [else
                      (fn-for-room (first todo) (rest todo) visited)]))]
 (fn-for-room r0 empty empty)))
+
+
+(define (reachable? r0 rn)
+  ;todo is a worklist accumulator
+  ;visited is a context preserving accumulator
+  (local [(define (fn-for-room r todo visited)
+            (if (string=? (room-name r) rn)
+                true
+                (if (member (room-name r) visited)
+                    (fn-for-lor todo visited)
+                    (fn-for-lor (append (room-exits r) todo) (cons (room-name r) visited)))))
+          (define (fn-for-lor todo visited)
+            (cond [(empty? todo) false]
+                  [else
+                   (fn-for-room (first todo) (rest todo) visited)]))]
+    (fn-for-room r0 empty empty)))
+
