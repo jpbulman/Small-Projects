@@ -10,3 +10,15 @@
 (set! x (* 3 4))
 
 (+ x 4)
+
+
+(begin (+ 2 3)
+       (/ 4 2))
+
+;Throws away every one execpt for the last one
+; Produces 2
+
+(deifne c 0)
+
+(begin (set! c (+ c 1))
+       c);Will produce 1
