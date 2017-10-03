@@ -1,6 +1,4 @@
 #lang racket
-(require 2htdp/image)
-
 
 (define-syntax my-if
   (syntax-rules (then else)
@@ -10,10 +8,5 @@
 (define-syntax comment-out
   (syntax-rules ()
     [(comment-out ignore instead) instead]))
-
-(define-syntax Rect
-  (syntax-rules (- _)
-    [(Rect w h s c )
-     (rectangle w h s c)]))
 
 
