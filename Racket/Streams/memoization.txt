@@ -1,0 +1,21 @@
+Memoization
+	-Avoids repeated computation
+	
+-If a function has no side effects and does not read mutable memory
+	-No need to compute it twice for the same arguments
+
+-Keep a cache of previous results
+	-This is worth if it is faster than the recomputation
+
+-Similar to promises
+	-Force/delay
+	-Thunks did not take arguments
+	-Memoization does
+
+-Memoization can lead to exponetially faster functions
+	-First recursive call fills table
+	-Second call just looks for what it needs
+	-Makes the program a lot faster
+	-Recursively, only one call
+	-2 times faster at every level
+	

@@ -1,0 +1,27 @@
+-Stream
+	-An inifinite sequence of values
+	-Can't actually make it
+	-Can make something to represent it
+	-Use a thunk to delay creating most of the sequences
+	
+	-Stream producer
+		-Knows how to create any number of values
+	-Stream consumer 
+		-Decides how many values to create
+
+	-Example of streams: 
+		-User actions (mouse,keys,etc)
+		-UNIX pipes
+
+-Using Streams
+	-Represent a stream as a thunk
+	-When called, returns a pair
+	
+(first (powersoftwo))
+2
+
+(first ((rest (powersoftwo))))
+4
+
+-Rest of the thunk will produce a procedure, needs to be called
+-Have to be careful if you are calling thunks/streams OR pairs

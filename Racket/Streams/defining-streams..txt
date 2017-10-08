@@ -1,0 +1,9 @@
+Defining Streams
+
+-A thunk
+-Returns a pair
+	-First element and procedure fot the rest of the thunk
+
+-Racket is a non lazy langauge
+	-It immediately evaluates
+	-You have to have thunks for streams
