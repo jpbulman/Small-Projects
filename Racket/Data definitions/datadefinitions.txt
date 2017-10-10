@@ -1,0 +1,11 @@
+Data Definitions
+
+-How we represent information as data
+
+-Type X is one of 
+	-...
+	-Type comment
+
+-interp. -> what it means
+
+-function template for operating on a new data type
