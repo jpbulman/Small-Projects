@@ -1,0 +1,25 @@
+Delay and Force
+
+-Lazy evaluation
+	-Want to not not compute something until needed
+	
+-If we want to do this and remember it
+	-Use force and delay
+
+-Delay will return pair
+	(false, thunk)
+
+-When you need the result of the thunk
+	-Call myforce on the pair
+	-A 'promise"
+
+-My force
+	-if the first is true
+		-return cdr/rest
+	-else/false
+		-Set the car/first to be true, means we have evaluated it
+		-Set the cdr of the promise to the result of the thunk
+
+-If you recall my force on the pair, it will go down the true branch
+
+-Call a function with a delay pair if you don't want it to be immediaestly evaluated

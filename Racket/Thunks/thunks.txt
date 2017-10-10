@@ -1,0 +1,17 @@
+Delayed Evaluation/Thunks
+
+-Functions are eager
+	-Parameters are immedieatly evaluated
+-Conditionals are not eager
+	-Racket only evaluates the expression that is need
+
+-If you want to delay an evaluation, wrap it in a function, and don't
+call it until you need it
+	-Thunks
+
+-Thunks
+	-Zero argument function used to delay evaluation
+-Example:
+	e
+	(lambda() e) -Thunks
+	(e) -Calling the thunk
