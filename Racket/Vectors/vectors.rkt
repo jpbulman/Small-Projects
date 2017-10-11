@@ -33,6 +33,9 @@
 (define j (vector 0 1 0))
 (define k (vector 0 0 1))
 
+;Most functions return a string, so it's not good in the sense that it does not return a type that is reusable
+;Might be something to look into fixing, but seems kind of hard
+
 ;Vector->String
 (define (ijk vect)
   (string-append (number->string (v1 vect)) "i+" (number->string (v2 vect)) "j+" (number->string (v3 vect)) "k"))
@@ -50,7 +53,11 @@
   (local [(define mag (magnitude vect))]
     (string-append (ijk vect) "/" (number->string mag))))
 
-;Macro?
+;Vector Vector -> Number
+(define (anglebetween u v)
+  (acos (/ (dotproduct u v)  (* (magnitude u) (magnitude v)))))
+
+;Macro of cross-product
 (define-syntax x
   (syntax-rules()
     [(x u v)
@@ -65,4 +72,3 @@
 (define (crossproduct u v)
   (string-append (number->string (- (* (v2 u) (v3 v)) (* (v2 v) (v3 u)))) "i-" (number->string (- (* (v1 u) (v3 v)) (* (v1 v) (v3 u)))) "j+" (number->string (- (* (v1 u) (v2 v)) (* (v1 v) (v2 u)))) "k"))
                
-              
