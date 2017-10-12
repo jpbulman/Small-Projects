@@ -6,6 +6,16 @@
 
 (define-struct vector (v1 v2 v3))
 
+;Points are just lists
+(define-syntax point
+  (syntax-rules()
+    [(point e1 e2 e3 ...) (append (list e1) (point e2 e3 ...))]
+    [(point e1) (list e1)]))
+
+#;(define-syntax pointdis
+  (syntax-rules()
+    [(pointdis p1 p2) (sqrt (+ (sqr (- (first p2) (first p1)))))]))
+
 (define-syntax nvector
   (syntax-rules()
     [(vector n1 n2 n3)
