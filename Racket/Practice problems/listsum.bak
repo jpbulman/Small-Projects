@@ -1,7 +1,4 @@
 #lang racket
-
-;If you are given a list of numbers, return the pairs that have equal a given sum
-
 (define (looksum list1 sum)
   (cond [(= 1 (length list1)) empty]
         [(= (+ (first list1) (first (rest list1))) sum) (cons (list (first list1) (first (rest list1))) (looksum (rest list1) sum))]

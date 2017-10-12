@@ -4,6 +4,9 @@
 ;There are some built in vectors in Racket, but things like cross and dot product are not bulit in
 ;JP Bulman
 
+
+;Fix: ad-cb should be ad-bc
+
 (define-struct vector (v1 v2 v3))
 
 ;Points are just lists
