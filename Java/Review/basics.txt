@@ -1,0 +1,51 @@
+-public
+	-Available to all other classes
+
+-classes
+	-like blueprints
+
+-static
+	-Can be called without an instance of the class
+
+-main 
+	public static void main(String args[]){}
+	-Accepts an array of string objects
+
+-void
+	-Does not return anything
+
+-static final
+	-A constant, does not change
+
+-Variables are as follows
+	-Must be declared
+	-type name = value;
+	-int woo = 1;
+	-Declaration statement- raw vlaue- 22
+	-Expression statement- 21+1
+
+-Primitives
+	-byte: 127(max) (-128 = min)
+	-short 32767(max) 
+	-int
+	-bigInt
+	-long- must end with a L
+	-float- must end with a F
+	-double- Bigger/moreprecise float
+	-char
+	-boolean
+
+-Can add strings using concat or +
+
+-Conversions
+	-Strings are objects
+	-String name = Type.toString(var);
+	-Primitive conversions
+	-type1 name = (type2) var;
+	-Casting
+
+int three = 3;
+
+double dbl = (double) three;
+
+

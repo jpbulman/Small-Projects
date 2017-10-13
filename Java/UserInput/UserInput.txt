@@ -1,0 +1,18 @@
+-Scanners
+	-Input
+	static Scanner myscanner = new Scanner(System.in);
+	-Declare a 'new' scanner
+
+	-myscanner.hasNextInt
+
+	-Detects for next Int
+	-Can be used with other types
+
+-funct(var)
+	-more used with primitives
+
+-obj.funct
+	-more used with objects
+
+- var1 = var1 + 2;
+  var1 += 2;
