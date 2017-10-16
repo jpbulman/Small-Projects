@@ -7,6 +7,13 @@ public class basicclass {
 
     static Scanner myscanner = new Scanner(System.in);
 
+    static void printn(int n,int acc){
+        if(acc==n){System.out.println(n);}
+        else {System.out.println(acc); printn(n,acc+1);}
+    }
+
+    static void printnum(int num){printn(num,1);}
+
     public static void main(String args[]){
         int rndnum1 = (int) (Math.random() * 30);
 
@@ -27,6 +34,9 @@ public class basicclass {
             case 2345324: System.out.println("Wow!"); break;
             default: System.out.println("That was not 10,11, or 2345324"); break;
         }
+
+        int userint0 = myscanner.nextInt();
+        printnum(userint0);
 
     }
 }
