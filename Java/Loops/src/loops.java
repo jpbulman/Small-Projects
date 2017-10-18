@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.util.Map;
 
 /**
@@ -72,17 +73,19 @@ public class loops {
         double mybetterpi = 3.0;
         double mybetterdem = 2.0;
 
-        while (mybetterdem<=99999){
+        while (mybetterdem<=9999){
 
             mybetterpi = mybetterpi + (4/(mybetterdem*(mybetterdem+1)*(mybetterdem+2))) - (4/((mybetterdem+2)*(mybetterdem+3)*(mybetterdem+4)));
 
             mybetterdem+=4;
 
-            System.out.println(mybetterpi);
+            System.out.println(new BigDecimal(mybetterpi));
 
         }
 
         System.out.println(Math.PI);
+
+        System.out.println(new BigDecimal(Math.PI));
 
 
    }
