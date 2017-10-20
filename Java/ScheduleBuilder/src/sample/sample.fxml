@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <Rectangle fx:id="addons" arcHeight="5.0" arcWidth="5.0" fill="#90989f" height="480.0" layoutX="540.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
+      <Rectangle fx:id="bkg" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="480.0" stroke="BLACK" strokeType="INSIDE" width="541.0" />
+      <TextField fx:id="start" layoutX="546.0" layoutY="14.0" prefHeight="25.0" prefWidth="89.0" promptText="Start Time" />
+      <TextField fx:id="end" layoutX="546.0" layoutY="39.0" prefHeight="25.0" prefWidth="89.0" promptText="End Time" />
+      <Rectangle fx:id="times" arcHeight="5.0" arcWidth="5.0" fill="#90989f" height="480.0" stroke="BLACK" strokeType="INSIDE" width="80.0" />
+      <Text fx:id="starttime" layoutX="15.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fdgdfg" wrappingWidth="50.803375244140625" />
+   </children>
+</Pane>
