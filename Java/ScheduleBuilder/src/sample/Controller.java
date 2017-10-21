@@ -7,11 +7,18 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+
+import java.util.HashMap;
+
+import static java.lang.Integer.parseInt;
 
 public class Controller {
 
@@ -37,33 +44,62 @@ public class Controller {
     ComboBox eventlist;
 
     @FXML
-    ComboBox durationlist;
+    TextField durationholder;
 
     @FXML
     TextField compname;
 
+    @FXML
+    ComboBox roundholder;
+
     //Buglist
         //Cant edit start after its made
-        //Colon in start requirement should not be in substring\
+        //Colon in start requirement should not be in substring
         //Null situations
+        //Might want to do new event as a classs
+
+    //Event and then duration
+    static HashMap eventmapper  = new HashMap();
 
     public void createEvent(){
 
         //if(eventvbox.getChildren().size()==0){return;}
 
-        if(starttime.getText().length()!=0&&!eventlist.getValue().equals("Event")&&!durationlist.getValue().equals("Duration")) {
+        if(starttime.getText().length()!=0&&!eventlist.getValue().equals("Event")&&!durationholder.getText().equals("Duration")) {
 
             Rectangle eventrect = new Rectangle(460, 20);
             eventvbox.getChildren().add(eventrect);
 
             eventrect.setStroke(Color.BLACK);
-            eventrect.setFill(Color.GREEN);
+            eventrect.setFill(Color.GREENYELLOW);
+
+            int duration = parseInt(durationholder.getText());
+            String eventname = (String)eventlist.getValue();
+            eventmapper.put(eventname,duration);
+            int roundnum = parseInt(roundholder.getValue().toString());
+
+            //Does not work here
+            Text displayname = new Text();
+            displayname.setX(eventrect.getX()+5);
+            displayname.setY(eventrect.getY()/2);
+            displayname.setText(eventname+" Round: "+roundnum);
+            displayname.setFont(Font.font("300"));
+            displayname.setVisible(true);
 
         }
         else {}
     }
 
     public void initialize(){
+
+        roundholder.getItems().addAll(
+                "1",
+                "2",
+                "3",
+                "4",
+                "Final",
+                "Combined Final"
+        );
 
         eventlist.getItems().addAll(
                 "3x3",
@@ -85,11 +121,6 @@ public class Controller {
                 "Awards",
                 "Cleanup",
                 "Custom..."
-        );
-
-        durationlist.getItems().addAll(
-                "Recommended",
-                "Custom/Manual"
         );
 
 
