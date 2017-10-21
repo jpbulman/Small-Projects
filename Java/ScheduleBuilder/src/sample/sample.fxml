@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Text?>
 
@@ -9,9 +13,17 @@
    <children>
       <Rectangle fx:id="addons" arcHeight="5.0" arcWidth="5.0" fill="#90989f" height="480.0" layoutX="540.0" stroke="BLACK" strokeType="INSIDE" width="100.0" />
       <Rectangle fx:id="bkg" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="480.0" stroke="BLACK" strokeType="INSIDE" width="541.0" />
-      <TextField fx:id="start" layoutX="546.0" layoutY="14.0" prefHeight="25.0" prefWidth="89.0" promptText="Start Time" />
-      <TextField fx:id="end" layoutX="546.0" layoutY="39.0" prefHeight="25.0" prefWidth="89.0" promptText="End Time" />
+      <TextField fx:id="start" layoutX="545.0" layoutY="35.0" prefHeight="25.0" prefWidth="90.0" promptText="Start Time" />
+      <TextField fx:id="end" layoutX="545.0" layoutY="60.0" prefHeight="25.0" prefWidth="90.0" promptText="End Time" />
       <Rectangle fx:id="times" arcHeight="5.0" arcWidth="5.0" fill="#90989f" height="480.0" stroke="BLACK" strokeType="INSIDE" width="80.0" />
-      <Text fx:id="starttime" layoutX="15.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="fdgdfg" wrappingWidth="50.803375244140625" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3ff1f" height="20.0" stroke="BLACK" strokeType="INSIDE" width="80.0" />
+      <Text fx:id="starttime" layoutX="5.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time:" wrappingWidth="50.803375244140625" />
+      <Accordion layoutX="154.0" layoutY="39.0" prefHeight="182.0" prefWidth="256.0" />
+      <VBox fx:id="eventvbox" layoutX="80.0" prefHeight="480.0" prefWidth="460.0" />
+      <ComboBox fx:id="eventlist" layoutX="545.0" layoutY="150.0" prefHeight="25.0" prefWidth="90.0" promptText="Event" />
+      <ComboBox fx:id="durationlist" layoutX="545.0" layoutY="175.0" prefHeight="25.0" prefWidth="90.0" promptText="Duration" />
+      <TextField fx:id="eventstart" layoutX="545.0" layoutY="200.0" prefHeight="25.0" prefWidth="90.0" promptText="Start Time" />
+      <TextField fx:id="compname" layoutX="545.0" layoutY="85.0" prefHeight="25.0" prefWidth="90.0" promptText="Comp name" />
+      <Button layoutX="545.0" layoutY="250.0" mnemonicParsing="false" onAction="#createEvent" prefHeight="25.0" prefWidth="90.0" text="Add Event" />
    </children>
 </Pane>
