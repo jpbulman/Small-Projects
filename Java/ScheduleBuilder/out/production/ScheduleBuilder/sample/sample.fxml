@@ -24,7 +24,7 @@
       <TextField fx:id="compname" layoutX="545.0" layoutY="85.0" prefHeight="25.0" prefWidth="90.0" promptText="Comp name" />
       <Button layoutX="545.0" layoutY="300.0" mnemonicParsing="false" onAction="#createEvent" prefHeight="25.0" prefWidth="90.0" text="Add Event" />
       <ComboBox fx:id="roundholder" layoutX="545.0" layoutY="225.0" prefHeight="25.0" prefWidth="90.0" promptText="Round" />
-      <TextField fx:id="durationholder" layoutX="545.0" layoutY="175.0" prefHeight="25.0" prefWidth="90.0" promptText="Duration" />
+      <TextField fx:id="durationholder" layoutX="545.0" layoutY="175.0" prefHeight="25.0" prefWidth="90.0" promptText="Duration(min)" />
       <VBox fx:id="eventvbox" layoutX="80.0" prefHeight="480.0" prefWidth="460.0" />
    </children>
 </Pane>
