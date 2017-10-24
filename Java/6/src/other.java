@@ -1,11 +1,13 @@
 /**
  * Created by JP Bulman on 10/23/2017.
  */
+import java.util.*;
+
 public class other {
 
     public static void main(String[] args){
 
-        dog John = new dog(1,1,true,10);
+        dog John = new dog(1,1,1,"John");
 
         //Does onot work because field is private
         //System.out.println(John.age);
