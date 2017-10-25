@@ -6,9 +6,7 @@ import java.util.Scanner;
 public class Main {
 
     //Todo:
-        //Detect duplicates
-        //Make less blank indents
-        //Make the win statement work
+       //Take space off exclamation mark
 
     //BugList:
         //Does not like 10 digits, should be able to do that though
@@ -68,11 +66,14 @@ public class Main {
         int k = 0;
 
         while (k!=numoffermis){
-            finalfermis=finalfermis+"Fermi ";
+            if (k==numoffermis-1){finalfermis=finalfermis+"Fermi";}
+            else finalfermis=finalfermis+"Fermi ";
             k++;
         }
 
-        return finalfermis;
+        if(numoffermis==answerstr.length()){System.out.println(finalfermis+"!"); return "";}
+        else return finalfermis;
+
     }
 
     public static String Picos(int answer,int theguess){
@@ -98,9 +99,24 @@ public class Main {
         return finalpicos;
     }
 
+    public static boolean duplicates(String str){
+
+        boolean dupl = true;
+
+        for(int i = 0; i < str.length(); i++){
+            if(containstwice(str,str.substring(i,i+1))){dupl=dupl;}
+            else if(i==str.length()-1){dupl=false;}
+            else {continue;}
+        }
+
+        return dupl;
+    }
+
     public static void main(String[] args){
 
-        System.out.println("What amount of digits would you like to play with?");
+        int turncount = 0;
+
+        System.out.println("What number of digits would you like to play with?");
         int digitnum = input.nextInt();
 
         int numtoguess = rnd(digitnum);
@@ -109,10 +125,14 @@ public class Main {
 
         System.out.println("What is your guess?");
         int guess = input.nextInt();
+        String guessstr = String.valueOf(guess);
 
-        if (Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){System.out.println("Bagel");}
-        else {System.out.println(Fermis(numtoguess,guess));
-              System.out.println(Picos(numtoguess,guess));}
+        if(duplicates(guessstr)){System.out.println("You entered a number with duplicate digits, try again");}
+        else if(Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){turncount++;System.out.println("Bagel");}
+        else {turncount++;
+              System.out.println(Fermis(numtoguess,guess));
+              System.out.println(Picos(numtoguess,guess));
+        }
 
 
 
@@ -120,16 +140,22 @@ public class Main {
 
             System.out.println("What is your guess?");
             guess = input.nextInt();
+            guessstr = String.valueOf(guess);
 
-            if (guess==numtoguess){break;}
+            if (duplicates(guessstr)){System.out.println("You entered a number with duplicate digits, try again");continue;}
+
+            turncount++;
+
+            if (guess==numtoguess){System.out.println(Fermis(numtoguess,guess));System.out.println("Turn Count: "+turncount);break;}
 
             if (Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){System.out.println("Bagel");}
+            else if(Picos(numtoguess,guess).equals("")&&!Fermis(numtoguess,guess).equals("")){System.out.println(Fermis(numtoguess,guess));}
+            else if(!Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){System.out.println(Picos(numtoguess,guess));}
             else {System.out.println(Fermis(numtoguess,guess));
-                  System.out.println(Picos(numtoguess,guess));}
+                  System.out.println(Picos(numtoguess,guess));
+                  }
 
         }
-
-        System.out.println("Fermi!");
 
     }
 
