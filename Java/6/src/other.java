@@ -18,5 +18,7 @@ public class other {
         //Does work here because there is a public method to get the age
         System.out.println(John.getAge());
 
+        John.buildboard();
+
     }
 }

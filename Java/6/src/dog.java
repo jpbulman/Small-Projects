@@ -2,11 +2,10 @@
  * Created by JP Bulman on 10/23/2017.
  */
 import java.util.*;
-import org.apache.commons.*;
 
 public class dog {
 
-    static char[][] playboard = new char[15][15];
+    static char[][] playboard = new char[10][10];
 
     public static void buildboard(){
 
