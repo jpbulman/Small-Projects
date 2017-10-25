@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CubeSolver2.iml" filepath="$PROJECT_DIR$/CubeSolver2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PicoFermiBagel.iml" filepath="$PROJECT_DIR$/PicoFermiBagel.iml" />
     </modules>
   </component>
 </project>
