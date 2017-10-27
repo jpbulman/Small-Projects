@@ -129,6 +129,8 @@ public class Main {
 
         if(duplicates(guessstr)){System.out.println("You entered a number with duplicate digits, try again");}
         else if(Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){turncount++;System.out.println("Bagel");}
+        else if(Picos(numtoguess,guess).equals("")&&!Fermis(numtoguess,guess).equals("")){System.out.println(Fermis(numtoguess,guess));}
+        else if(!Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){System.out.println(Picos(numtoguess,guess));}
         else {turncount++;
               System.out.println(Fermis(numtoguess,guess));
               System.out.println(Picos(numtoguess,guess));
