@@ -134,7 +134,7 @@ public class Controller {
                 String numstr;
                 int digitnum;
 
-                int numtoguess;
+                int numtoguess = 0;
 
                 if (numtimespressed==1) {
                     int turncount = 0;
@@ -144,16 +144,20 @@ public class Controller {
 
                     numtoguess = rnd(digitnum);
 
+                    System.out.println(numtoguess);
+
                     input.setText("");
                     display.setText("What is your guess?");
                 }
 
+                if(numtimespressed>1){input.setText(String.valueOf(numtoguess));}
+
             }
 
 
-            if (e.getCode()== KeyCode.ENTER) {
-                String guessstr = input.getText();
-                int guess = Integer.parseInt(guessstr);}
+           // if (e.getCode()== KeyCode.ENTER) {
+               // String guessstr = input.getText();
+               // int guess = Integer.parseInt(guessstr);}
 
             /*
             System.out.println("What is your guess?");
