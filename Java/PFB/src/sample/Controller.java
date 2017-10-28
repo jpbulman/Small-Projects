@@ -1,12 +1,11 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.Pane;
-
-import java.util.Scanner;
 
 public class Controller {
 
@@ -14,10 +13,17 @@ public class Controller {
     Pane mainPane;
 
     @FXML
-    TextField input;
+    TextArea input;
 
     @FXML
     TextArea display;
+
+    @FXML
+    TextArea digitsinput;
+
+    @FXML
+    Button enterbutton;
+
 
     //static Scanner input = new Scanner(System.in);
 
@@ -78,8 +84,9 @@ public class Controller {
             k++;
         }
 
-        if(numoffermis==answerstr.length()){System.out.println(finalfermis+"!"); return "";}
-        else return finalfermis;
+        //if(numoffermis==answerstr.length()){System.out.println(finalfermis+"!"); return "";}
+        //else
+            return finalfermis;
 
     }
 
@@ -119,88 +126,38 @@ public class Controller {
         return dupl;
     }
 
+    int numtoguess;
+    int turncount = 0;
+
+    public void enterPressed(){
+
+        String digitnumstr = digitsinput.getText();
+
+        int digitnum = Integer.parseInt(digitnumstr);
+
+        if(turncount==0) {
+            numtoguess = rnd(digitnum);
+            //display.setText("");
+        }
+
+        display.setText("What is your guess?");
+        String guessstr = input.getText();
+        int guess = Integer.parseInt(guessstr);
+
+        display.appendText("\n"+guessstr);
+
+        System.out.println(numtoguess);
+
+        if (guess==numtoguess){display.appendText("\n");display.appendText(Fermis(numtoguess,guess));System.out.println("Turn Count: "+turncount);}
+
+
+        turncount++;
+
+    }
+
     public void initialize() {
 
-        display.setText("What number of digits would you like to play with?");
-
-        input.setOnKeyPressed(e->{
-
-            int numtimespressed = 0;
-
-            if (e.getCode()== KeyCode.ENTER) {
-
-                numtimespressed++;
-
-                String numstr;
-                int digitnum;
-
-                int numtoguess = 0;
-
-                if (numtimespressed==1) {
-                    int turncount = 0;
-
-                    numstr = input.getText();
-                    digitnum = Integer.parseInt(numstr);
-
-                    numtoguess = rnd(digitnum);
-
-                    System.out.println(numtoguess);
-
-                    input.setText("");
-                    display.setText("What is your guess?");
-                }
-
-                if(numtimespressed>1){input.setText(String.valueOf(numtoguess));}
-
-            }
-
-
-           // if (e.getCode()== KeyCode.ENTER) {
-               // String guessstr = input.getText();
-               // int guess = Integer.parseInt(guessstr);}
-
-            /*
-            System.out.println("What is your guess?");
-            int guess = input.nextInt();
-            String guessstr = String.valueOf(guess);
-
-            if(duplicates(guessstr)){System.out.println("You entered a number with duplicate digits, try again");}
-            else if(Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){turncount++;System.out.println("Bagel");}
-            else {turncount++;
-                System.out.println(Fermis(numtoguess,guess));
-                System.out.println(Picos(numtoguess,guess));
-            }
-
-
-
-            while (guess!=numtoguess){
-
-                System.out.println("What is your guess?");
-                guess = input.nextInt();
-                guessstr = String.valueOf(guess);
-
-                if (duplicates(guessstr)){System.out.println("You entered a number with duplicate digits, try again");continue;}
-
-                turncount++;
-
-                if (guess==numtoguess){System.out.println(Fermis(numtoguess,guess));System.out.println("Turn Count: "+turncount);break;}
-
-                if (Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){System.out.println("Bagel");}
-                else if(Picos(numtoguess,guess).equals("")&&!Fermis(numtoguess,guess).equals("")){System.out.println(Fermis(numtoguess,guess));}
-                else if(!Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){System.out.println(Picos(numtoguess,guess));}
-                else {System.out.println(Fermis(numtoguess,guess));
-                    System.out.println(Picos(numtoguess,guess));
-                }
-
-            }*/
-
-
-
-        });
-
-        //System.out.println(numtoguess);
-
-
+        display.setText("What is your guess?");
 
     }
 
