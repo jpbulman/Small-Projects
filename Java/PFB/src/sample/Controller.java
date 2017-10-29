@@ -13,19 +13,10 @@ public class Controller {
     Pane mainPane;
 
     @FXML
-    TextArea input;
+    TextArea input,display,digitsinput;
 
     @FXML
-    TextArea display;
-
-    @FXML
-    TextArea digitsinput;
-
-    @FXML
-    Button enterbutton;
-
-
-    //static Scanner input = new Scanner(System.in);
+    Button enterbutton,playagain;
 
     public static int totalright(String word1,String word2){
 
@@ -137,27 +128,54 @@ public class Controller {
 
         if(turncount==0) {
             numtoguess = rnd(digitnum);
-            //display.setText("");
         }
 
-        display.setText("What is your guess?");
+        else {display.appendText("\n"+"\n"+"Your guess was:");
+        }
+
         String guessstr = input.getText();
         int guess = Integer.parseInt(guessstr);
 
+
         display.appendText("\n"+guessstr);
 
-        System.out.println(numtoguess);
+        //System.out.println(numtoguess);
 
-        if (guess==numtoguess){display.appendText("\n");display.appendText(Fermis(numtoguess,guess));System.out.println("Turn Count: "+turncount);}
+        if (guess==numtoguess){display.appendText("\n");display.appendText(Fermis(numtoguess,guess)+"!");
+        display.appendText("\n"+"Turn Count: "+turncount);display.appendText("\n"+"Congratulations!");return;}
 
+        if (duplicates(guessstr)){display.appendText("\n"+"You entered a number with duplicate digits, try again");return;}
+        if (Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){display.appendText("\n"+"Bagel");}
+        else if(Picos(numtoguess,guess).equals("")&&!Fermis(numtoguess,guess).equals("")){display.appendText("\n"+Fermis(numtoguess,guess));}
+        else if(!Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){display.appendText("\n"+Picos(numtoguess,guess));}
+        else {display.appendText("\n"+Fermis(numtoguess,guess));
+              display.appendText("\n"+Picos(numtoguess,guess));
+        }
 
         turncount++;
+        input.setText("");
+        input.appendText("\b");
+        if(turncount==1){digitsinput.setEditable(false);}
+    }
 
+    public void reset(){
+        display.setText("What is your guess?");
+        input.setText("");
+        digitsinput.setEditable(true);
+        digitsinput.setText("");
+        turncount=0;
     }
 
     public void initialize() {
 
+        //playagain.setVisible(false);
+
         display.setText("What is your guess?");
+
+        input.setOnKeyPressed(e->{
+            if (e.getCode()==KeyCode.ENTER){enterPressed();input.appendText("\b");}
+        });
+
 
     }
 
