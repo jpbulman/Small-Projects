@@ -3,12 +3,14 @@
     <output-path>$PROJECT_DIR$/out/artifacts/PFB</output-path>
     <properties id="javafx-properties">
       <options>
-        <option name="appClass" value="Main" />
+        <option name="appClass" value="sample.Main" />
         <option name="description" value="" />
+        <option name="height" value="480" />
         <option name="htmlPlaceholderId" value="" />
-        <option name="title" value="PicoFermiBagel" />
+        <option name="title" value="" />
         <option name="vendor" value="" />
-        <option name="version" value="1.0" />
+        <option name="version" value="" />
+        <option name="width" value="640" />
       </options>
     </properties>
     <root id="root">

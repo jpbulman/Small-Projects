@@ -13,7 +13,10 @@ public class Controller {
     Pane mainPane;
 
     @FXML
-    TextArea input,display,digitsinput;
+    TextArea display;
+
+    @FXML
+    TextField input,digitsinput;
 
     @FXML
     Button enterbutton,playagain;
