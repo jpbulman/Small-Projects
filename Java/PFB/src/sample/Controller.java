@@ -144,8 +144,9 @@ public class Controller {
 
         //System.out.println(numtoguess);
 
+        //Does not reach the next ++ but still needs a +1 in turn count
         if (guess==numtoguess){display.appendText("\n");display.appendText(Fermis(numtoguess,guess)+"!");
-        display.appendText("\n"+"Turn Count: "+turncount);display.appendText("\n"+"Congratulations!");return;}
+        display.appendText("\n"+"Turn Count: "+turncount+1);display.appendText("\n"+"Congratulations!");return;}
 
         if (duplicates(guessstr)){display.appendText("\n"+"You entered a number with duplicate digits, try again");return;}
         if (Picos(numtoguess,guess).equals("")&&Fermis(numtoguess,guess).equals("")){display.appendText("\n"+"Bagel");}
