@@ -29,4 +29,22 @@ public class EarthquakeExamples {
                  E1.dailyMaxForMonth(threeDates, 11));
   }
 
+  
+  //Problem 3 Strategy 1 
+  //
+  //List of subtasks
+  //
+  //-Filter the data so that it's just the data for the month desired
+  //-Loop through the list of month data
+  //	-Keep track of what day the current piece of data is for
+  //	-Keep track of what the highest report is so far
+  //	-Check to see when the data ends for a day
+  //	-Make a list of 'MaxHzReport's with the date and its corresponding highest Hz
+  
 }
+
+
+
+
+
+

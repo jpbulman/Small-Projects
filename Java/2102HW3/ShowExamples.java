@@ -97,7 +97,7 @@ public class ShowExamples
 
 
 
-//Problem 1
+//Problem 1 Strategy 1
 //Subtasks
 //First, the 'organizeShows' method must be able to cycle through the list of shows in order to process them; this means a for loop can be used to 
 //help solve the problem. The element-based for loop cycles until it hits the end of the list of shows, each time looking for a 'Show'. First,

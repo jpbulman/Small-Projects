@@ -54,4 +54,12 @@ public class DataSmoothExamples
 	  
   }
   
+  //Problem 2 Strategy 1
+  //
+  //List of Subtasks
+  //
+  //-Get shows avg run time
+  //-Make a list of avg run times by looping through a list of episodes
+  //-Smooth the avg run times by looping through the list of times
+  
 }
