@@ -54,6 +54,7 @@ public class DataSmoothExamples
 	  
   }
   
+  
   //Problem 2 Strategy 1
   //
   //List of Subtasks

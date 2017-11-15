@@ -28,7 +28,6 @@ public class EarthquakeExamples {
     assertEquals(NovReports, 
                  E1.dailyMaxForMonth(threeDates, 11));
   }
-
   
   //Problem 3 Strategy 1 
   //

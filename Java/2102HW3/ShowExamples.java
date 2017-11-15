@@ -12,9 +12,15 @@ public class ShowExamples
 	ShowSummary report2 = new ShowSummary();
 	
 	ShowSummary report3 = new ShowSummary();
-	//Comments 
-	//Examples for shows
 	
+	LinkedList<Show> singleEntry = new LinkedList<Show>();
+	ShowSummary single = new ShowSummary();
+	
+	LinkedList<Show> singleDayTime = new LinkedList<Show>();
+	ShowSummary singleDay = new ShowSummary();
+	
+	LinkedList<Show> singleNightTime = new LinkedList<Show>();
+	ShowSummary singleNight = new ShowSummary();
 	public ShowExamples()
 	{
 		LinkedList<Episode> eps1 = new LinkedList<Episode>();
@@ -77,8 +83,24 @@ public class ShowExamples
 		shows2.add(s7);
 		report3.primetime.add(s7);
 		
+		LinkedList<Episode> eps8 = new LinkedList<Episode>();
+		eps8.add(new Episode("The Quad",20));
+		eps8.add(new Episode("Morgan",90));
+		eps8.add(new Episode("The Pod",120));
+		eps8.add(new Episode("Stod",4));
+		Show s8 = new Show("WPI Show",100,eps8);
+		shows2.add(s8);
+		
+		singleEntry.add(s6);
+		single.primetime.add(s6);
+		
+		singleDayTime.add(s4);
+		singleDay.daytime.add(s4);
+		
+		singleNightTime.add(s8);
 	}
 	
+	//Multiple primetime and daytime shows
 	@Test
 	public void instructorTestOrganizeShows() 
 	{
@@ -86,12 +108,46 @@ public class ShowExamples
 		assertEquals(report1, report2);
 	}
 	
+	//Multiple primetime and daytime shows with a nighttime broadcast
 	@Test
 	public void secondMethodTest() {
-		ShowSummary report4 = sm2.organizeShows(shows2);
+		ShowSummary report4 = sm1.organizeShows(shows2);
 		assertEquals(report3,report4);
 	}
+	
+	//Empty and empty list tester
+	@Test
+	public void thridMethodTest() {
+		ShowManager1 sm2 = new ShowManager1();
+		LinkedList<Show> emptyList = new LinkedList<Show>();
+		ShowSummary tester = sm2.organizeShows(emptyList);
+		ShowSummary emptySm = new ShowSummary();
+		assertEquals(tester,emptySm);
+	}
 
+	//Single entry primetime list tester
+	@Test
+	public void FourthMethodTest() {
+		ShowManager1 organizer = new ShowManager1();
+		ShowSummary singleSM = organizer.organizeShows(singleEntry);
+		assertEquals(single,singleSM);
+	}
+	
+	//Single entry daytime list tester
+	@Test
+	public void FifthMethodTest() {
+		ShowManager1 organizer = new ShowManager1();
+		ShowSummary singleSM = organizer.organizeShows(singleDayTime);
+		assertEquals(singleDay,singleSM);
+	}
+	
+	//Single nighttime entry list test
+	@Test
+	public void SixthMethodTest() {
+		ShowManager1 organizer = new ShowManager1();
+		ShowSummary singleSM = organizer.organizeShows(singleNightTime);
+		assertEquals(singleSM,singleNight);
+	}
 
 }
 
