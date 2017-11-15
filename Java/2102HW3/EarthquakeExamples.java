@@ -20,27 +20,53 @@ public class EarthquakeExamples {
     threeDates.add(6.0);
     NovReports.add(new MaxHzReport(20151101.0,6.0));
   }
-
+//Test the code's performance when the only report to return stems from the last 2 doubles
   @Test
   public void instructorTestEQ() { 
-	  System.out.println(NovReports);
-	  System.out.println(E1.dailyMaxForMonth(threeDates, 11));
     assertEquals(NovReports, 
                  E1.dailyMaxForMonth(threeDates, 11));
   }
-  
-  //Problem 3 Strategy 1 
-  //
-  //List of subtasks
-  //
-  //-Filter the data so that it's just the data for the month desired
-  //-Loop through the list of month data
-  //	-Keep track of what day the current piece of data is for
-  //	-Keep track of what the highest report is so far
-  //	-Check to see when the data ends for a day
-  //	-Make a list of 'MaxHzReport's with the date and its corresponding highest Hz
-  
+  //Test the code's performance when it must return two reports
+  @Test
+  public void studentTestEq() {
+	  NovReports.add(new MaxHzReport(20151102.0,8.0));
+	  threeDates.add(20151102.0);
+	  threeDates.add(8.0);
+	  assertEquals(NovReports, E1.dailyMaxForMonth(threeDates, 11));
+  }
+  //Test the code's performance when there are multiple possible reports for one day
+  @Test
+  public void StudentTestb() {
+	  threeDates.add(2.2);
+	  assertEquals(NovReports, E1.dailyMaxForMonth(threeDates, 11));
+  }
+  //Test the code's performance when extraneous dates are provided at the end of the data
+  @Test
+  public void StudentTestc() {
+	  threeDates.add(20151202.0);
+	  assertEquals(NovReports, E1.dailyMaxForMonth(threeDates, 11));
+	  }
+  //Test the code's handling of an list that lacks relevant data
+  @Test
+  public void StudentTestd() {
+  LinkedList<MaxHzReport> boring = new LinkedList<MaxHzReport>();
+  LinkedList<Double> useless = new LinkedList<Double>();
+  useless.add(20150101.0);
+  useless.add(2.0);
+  	assertEquals(boring, E1.dailyMaxForMonth(useless, 11));
+  }
 }
+
+//The subtasks included
+/* Calculate the average run time for each show
+ * Place the average of the first show at the first position in the list
+ * Calculate each smoothed data point
+ * Place each smoothed data point at its correct place in the list
+ * Place the average of the last show in the final list position
+ * Return the list
+ */
+
+
 
 
 

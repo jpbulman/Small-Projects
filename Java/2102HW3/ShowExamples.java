@@ -2,6 +2,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 import java.util.LinkedList;
 
+//Micheal Clements and JP Bulman
+
 public class ShowExamples 
 {
 	ShowManager1 sm1 = new ShowManager1();
@@ -21,6 +23,7 @@ public class ShowExamples
 	
 	LinkedList<Show> singleNightTime = new LinkedList<Show>();
 	ShowSummary singleNight = new ShowSummary();
+	
 	public ShowExamples()
 	{
 		LinkedList<Episode> eps1 = new LinkedList<Episode>();
@@ -61,7 +64,7 @@ public class ShowExamples
 		eps5.add(new Episode("Oxygen",30));
 		eps5.add(new Episode("The Power of Three",50));
 		eps5.add(new Episode("Dinosaurs on a Spaceship",45));
-		Show s5 = new Show("Doctor Who",1200,eps5);
+		Show s5 = new Show("Doctor Who",600,eps5);
 		shows2.add(s5);
 		report3.daytime.add(s5);
 		
@@ -70,7 +73,7 @@ public class ShowExamples
 		eps6.add(new Episode("Confessions",30));
 		eps6.add(new Episode("Genetics",10));
 		eps6.add(new Episode("Whistleblowers",120));
-		Show s6 = new Show("Blue Bloods",1900,eps6);
+		Show s6 = new Show("Blue Bloods",1700,eps6);
 		shows2.add(s6);
 		report3.primetime.add(s6);
 		
@@ -88,7 +91,7 @@ public class ShowExamples
 		eps8.add(new Episode("Morgan",90));
 		eps8.add(new Episode("The Pod",120));
 		eps8.add(new Episode("Stod",4));
-		Show s8 = new Show("WPI Show",100,eps8);
+		Show s8 = new Show("WPI Show",2300,eps8);
 		shows2.add(s8);
 		
 		singleEntry.add(s6);
@@ -109,6 +112,7 @@ public class ShowExamples
 	}
 	
 	//Multiple primetime and daytime shows with a nighttime broadcast
+	//Also tests edge cases
 	@Test
 	public void secondMethodTest() {
 		ShowSummary report4 = sm1.organizeShows(shows2);
@@ -153,7 +157,7 @@ public class ShowExamples
 
 
 
-//Problem 1 Strategy 1
+//Problem 1
 //Subtasks
 //First, the 'organizeShows' method must be able to cycle through the list of shows in order to process them; this means a for loop can be used to 
 //help solve the problem. The element-based for loop cycles until it hits the end of the list of shows, each time looking for a 'Show'. First,
