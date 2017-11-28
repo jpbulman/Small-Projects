@@ -42,10 +42,23 @@ public class Main {
 
     public static void main(String[] args){
 
-        Solved.R();
+        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
+
+        Solved.L();
 
         System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
 
+        Solved.L();
+
+        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
+
+        Solved.L();
+
+        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
+
+        Solved.K().Y().B().K().B().R().B().R();
+
+        System.out.println(Solved.C4.S2.color+Solved.T4.S2.color+Solved.E2.S2.color+Solved.C3.S3.color+Solved.T3.S3.color);
     }
 
 } 
