@@ -39,26 +39,15 @@ public class Main {
 
     static Pyraminx Solved = new Pyraminx(t1,t2,t3,t4,c1,c2,c3,c4,e1,e2,e3,e4,e5,e6,"");
 
+    public static String Solve(Pyraminx pyra){
+
+        return "";
+    }
 
     public static void main(String[] args){
 
-        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
+        System.out.println(Solved.isSolved());
 
-        Solved.L();
-
-        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
-
-        Solved.L();
-
-        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
-
-        Solved.L();
-
-        System.out.println(Solved.C2.S2.color+Solved.E5.S1.color+Solved.T2.S2.color+Solved.E3.S2.color);
-
-        Solved.K().Y().B().K().B().R().B().R();
-
-        System.out.println(Solved.C4.S2.color+Solved.T4.S2.color+Solved.E2.S2.color+Solved.C3.S3.color+Solved.T3.S3.color);
     }
 
 } 

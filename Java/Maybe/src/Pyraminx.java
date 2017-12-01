@@ -157,8 +157,35 @@ public class Pyraminx {
         E1=new Edge(E2.S2,E2.S1);
         E2=E4;
         E4=new Edge(E1O.S2,E1O.S1);
+        Solution+="V";
 
         return this;
+    }
+
+    Pyraminx b(){
+
+        Tip T1O = T1;
+
+        T1.S1=T1.S3;
+        T1.S3=T1.S2;
+        T1.S2=T1O.S1;
+        Solution+="b";
+
+        return this;
+    }
+
+    Pyraminx solveTips(){
+
+        if(T1.S1.color.equals("B")){this.b();}
+
+        return this;
+    }
+
+    boolean isSolved(){
+        return (this.T1.S1.color.equals("Y")&&this.T2.S1.color.equals("Y")&&this.T3.S1.color.equals("Y")&&this.T4.S1.color.equals("B")&&
+        this.C1.S1.color.equals("Y")&&this.C2.S1.color.equals("Y")&&this.C3.S1.color.equals("Y")&&this.C4.S1.color.equals("B")&&
+        this.E1.S1.color.equals("Y")&&this.E2.S1.color.equals("Y")&&this.E3.S1.color.equals("Y")&&this.E4.S1.color.equals("B")&&
+        this.E5.S1.color.equals("G")&&this.E6.S1.color.equals("R"));
     }
 
 } 
