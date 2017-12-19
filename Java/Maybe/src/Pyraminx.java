@@ -174,9 +174,23 @@ public class Pyraminx {
         return this;
     }
 
+    Pyraminx v(){
+
+        Tip T1O = T1;
+
+        T1.S1=T1.S2;
+        T1.S2=T1.S3;
+        T1.S3=T1O.S1;
+        Solution+="v";
+
+        return this;
+    }
+
     Pyraminx solveTips(){
 
         if(T1.S1.color.equals("B")){this.b();}
+        else if(T1.S1.color.equals("R")){this.v();}
+        else {}
 
         return this;
     }

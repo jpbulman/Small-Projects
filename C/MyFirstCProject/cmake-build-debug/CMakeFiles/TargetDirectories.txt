@@ -1,0 +1,3 @@
+C:/Users/JP Bulman/Desktop/Mini-Projs/C/MyFirstCProject/cmake-build-debug/CMakeFiles/MyFirstCProject.dir
+C:/Users/JP Bulman/Desktop/Mini-Projs/C/MyFirstCProject/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/JP Bulman/Desktop/Mini-Projs/C/MyFirstCProject/cmake-build-debug/CMakeFiles/rebuild_cache.dir
