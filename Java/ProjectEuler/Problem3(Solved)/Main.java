@@ -4,24 +4,27 @@ public class Main {
 
     public static boolean isPrime(int i,int currDivisor){
 
+        if (i==2){return true;}
         if(i%currDivisor==0){return false;}
         if(currDivisor==2){return true;}
         else return isPrime(i,currDivisor-1);
 
     }
 
-    public static int multiplyAll(LinkedList<Integer> list){
+    public static int Largest(LinkedList<Integer> i){
 
-        int currentProduct = 1;
+        int currentLargest = 0;
 
-        for (int i:list){
-            currentProduct*=i;
+        for(int j:i){
+            if(j>currentLargest){currentLargest=j;}
         }
 
-        return currentProduct;
+        return currentLargest;
     }
 
     public static LinkedList<Integer> primeFactors(int i,int currentCheck,LinkedList<Integer> factors){
+
+        if(i==2){factors.add(2);return factors;}
 
         if(currentCheck==i){return factors;}
 
@@ -33,7 +36,7 @@ public class Main {
                 factors.add((i / currentCheck));
                 return factors;
             } else {
-                factors.addAll(primeFactors(i / currentCheck, 2, factors));
+                factors.addAll(primeFactors(i / currentCheck, 2, new LinkedList<Integer>()));
                 return factors;
             }
         }
@@ -44,7 +47,7 @@ public class Main {
 
 
     public static void main(String[] args){
-        System.out.println(primeFactors(6,2,new LinkedList<Integer>()));
+        int Solution = Largest(primeFactors(600851475143,2,new LinkedList<Integer>()));
     }
 
 } 
