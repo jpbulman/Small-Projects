@@ -14,6 +14,10 @@ int myFirstArray[10];
 int main() {
     printf("Hello, World!\n");
 
+    int i = 1;
+
+    printf("");
+
     //%d means to print a the following int
     printf("%d\n",firstInt+Char1+We);
 
